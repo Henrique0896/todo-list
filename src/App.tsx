@@ -1,6 +1,6 @@
 import styles from "./app.module.css";
 import { Header } from "./components/atoms/Header";
-import { ToDoBoard } from "./components/molecules/ToDoBoard";
+import { ToDoBoard } from "./components/organisms/ToDoBoard";
 import "./global.css";
 
 function App() {
