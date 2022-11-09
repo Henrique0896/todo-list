@@ -1,6 +1,6 @@
 import { CheckCircle, Circle, Trash } from "phosphor-react";
 import styles from "./Task.module.css";
-import { TaskModel } from "../../models/TaskModel";
+import { TaskPropsModel } from "../../models/TaskPropsModel";
 
 export function Task({
   id,
@@ -8,7 +8,7 @@ export function Task({
   taskStatus,
   onChangeTaskStatus,
   onDeleteTask,
-}: TaskModel): JSX.Element {
+}: TaskPropsModel): JSX.Element {
  
   return (
     <div className={styles.task}>

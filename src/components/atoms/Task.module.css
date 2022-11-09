@@ -36,3 +36,7 @@
 .task .check {
   color: var(--blue);
 }
+
+.task + .task{
+  margin-top: 0.75rem;
+}
