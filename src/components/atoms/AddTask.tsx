@@ -22,6 +22,7 @@ export function AddTask({ onCreateTask }: NewTaskInterface): JSX.Element {
         placeholder="Adicione uma nova tarefa"
         value={taskText}
         onChange={(e) => setTaskText(e.target.value)}
+        required
       />
       <button title="Criar" onClick={handleCreateTask}>
         Criar <PlusCircle width={16} height={16} weight="bold" />

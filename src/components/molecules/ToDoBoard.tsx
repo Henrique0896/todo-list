@@ -8,9 +8,20 @@ import { TaskModel } from "../../models/TaskModel";
 export function ToDoBoard() {
   const [tasks, setTasks] = useState([] as TaskModel[]);
 
-  function onChangeTaskStatus(){}
+  function onChangeTaskStatus(id: string): void {
+    const tasksModified = tasks.map((task) => {
+      if (task.id === id) {
+        task.taskStatus = task.taskStatus === "done" ? "not done" : "done"
+      }
+      return task
+    })
+    setTasks(tasksModified)
+  }
 
-  function onDeleteTask(){}
+  function onDeleteTask(id: string): void {
+    const newTasks = tasks.filter((task) => task.id !== id)
+    setTasks(newTasks)
+  }
 
   function onCreateTask(newTask: TaskModel) {
     setTasks((state) => [...state, newTask]);
