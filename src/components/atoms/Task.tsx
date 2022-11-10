@@ -9,21 +9,30 @@ export function Task({
   onChangeTaskStatus,
   onDeleteTask,
 }: TaskPropsModel): JSX.Element {
- 
   return (
     <div className={styles.task}>
-      <button className={styles.checkButton} onClick={() => onChangeTaskStatus(id)}>
+      <button
+        className={styles.checkButton}
+        onClick={() => onChangeTaskStatus(id)}
+      >
         {taskStatus === "done" ? (
           <CheckCircle size={24} weight="fill" className={styles.check} />
         ) : (
           <Circle size={24} className={styles.check} />
         )}
       </button>
-      <p>{text}</p>
+      {taskStatus === "done" ? (
+        <p>{text}</p>
+      ) : (
+        <p>
+          <s>{text}</s>
+        </p>
+      )}
+
       <button
         title="Excluir"
         className={styles.delete}
-        onClick={ () => onDeleteTask(id)}
+        onClick={() => onDeleteTask(id)}
       >
         <Trash size={24} />
       </button>

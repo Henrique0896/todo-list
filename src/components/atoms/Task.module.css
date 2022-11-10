@@ -19,6 +19,10 @@
   flex: 1;
 }
 
+.task p s{
+  color: var(--gray-300);
+}
+
 .task .delete svg {
     color: var(--gray-300)
   }
